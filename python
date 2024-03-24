@@ -1,0 +1,23 @@
+import numpy as np
+
+# Input coefficients of the first equation
+a1 = float(input("Enter coefficient a1: "))
+b1 = float(input("Enter coefficient b1: "))
+c1 = float(input("Enter coefficient c1: "))
+
+# Input coefficients of the second equation
+a2 = float(input("Enter coefficient a2: "))
+b2 = float(input("Enter coefficient b2: "))
+c2 = float(input("Enter coefficient c2: "))
+
+# Define the coefficient matrix
+A = np.array([[a1, b1], [a2, b2]])
+
+# Define the constant matrix
+B = np.array([[-c1], [-c2]])
+
+# Solve the system of equations
+solution = np.linalg.solve(A, B)
+
+# Output the solution
+print("The solution to the system of equations is x = {:.2f}, y = {:.2f}".format(solution[0][0], solution[1][0]))
